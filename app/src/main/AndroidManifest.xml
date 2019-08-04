@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BooksManager"></activity>
+        <activity android:name=".request_books_manager"></activity>
+        <activity android:name=".feedback_manager" />
+        <activity android:name=".user_manager" />
+        <activity android:name=".DashBoard" />
+        <activity android:name=".BooksManager" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
