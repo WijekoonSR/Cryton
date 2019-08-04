@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
        public void onClick(View view) {
            Intent i = new Intent(MainActivity.this,user_manager.class);
            startActivity(i);
+       //hhh
        }
    });
     }
