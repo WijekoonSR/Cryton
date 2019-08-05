@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     button = (Button)findViewById(R.id.btn_sign_up);
-   button.setOnClickListener(new View.OnClickListener() {
+           button.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View view) {
            Intent i = new Intent(MainActivity.this,user_manager.class);
@@ -25,5 +25,14 @@ public class MainActivity extends AppCompatActivity {
        //hhh
        }
    });
+        button = (Button)findViewById(R.id.btn_login);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,DashBoard.class);
+                startActivity(i);
+                //hhh
+            }
+        });
     }
 }
