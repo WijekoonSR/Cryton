@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    button = (Button)findViewById(R.id.btn_login);
+    button = (Button)findViewById(R.id.btn_sign_up);
    button.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View view) {
-           Intent i = new Intent(MainActivity.this,user_manager.class);
+           Intent i = new Intent(MainActivity.this,user_manager_view_acc.class);
            startActivity(i);
        //hhh
        }
