@@ -10,7 +10,7 @@
         android:id="@+id/button4"
         android:layout_width="306dp"
         android:layout_height="98dp"
-        android:text="View Books"
+        android:text="Navo Books"
         tools:layout_editor_absoluteX="68dp"
         tools:layout_editor_absoluteY="165dp" />
 
