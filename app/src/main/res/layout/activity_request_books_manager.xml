@@ -155,9 +155,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.529" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="175dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="56dp"    app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988"
+        tools:srcCompat="@drawable/cancel" />
 
 
+    <!--android:background="@drawable/500_F_11609263_j4bgVnovSqqi34BfHVgDjTiQfPGCXDD6"-->
+        <!--android:foreground="@drawable/500_F_11609263_j4bgVnovSqqi34BfHVgDjTiQfPGCXDD6"-->
 
+        <!--app:srcCompat="@drawable/500_F_11609263_j4bgVnovSqqi34BfHVgDjTiQfPGCXDD6"-->
 
     <ImageView
         android:id="@+id/imageView5"
