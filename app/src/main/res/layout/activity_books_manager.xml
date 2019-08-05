@@ -8,10 +8,16 @@
     android:orientation="vertical"
     tools:context=".BooksManager" >
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="440dp"
+        android:layout_height="49dp">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/button10"
         android:layout_width="match_parent"
-        android:layout_height="76dp"
+        android:layout_height="61dp"
         android:text="Arts and Music" />
 
     <Button
@@ -29,7 +35,7 @@
     <Button
         android:id="@+id/button13"
         android:layout_width="match_parent"
-        android:layout_height="81dp"
+        android:layout_height="58dp"
         android:text="Kids" />
 
     <Button
@@ -41,7 +47,7 @@
     <Button
         android:id="@+id/button15"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="59dp"
         android:text="Computers and Tech" />
 
     <Button
@@ -53,13 +59,13 @@
     <Button
         android:id="@+id/btn_romance"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:text="Romance" />
 
     <Button
         android:id="@+id/button18"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:text="Sports" />
 
     <Button
@@ -71,12 +77,12 @@
     <Button
         android:id="@+id/button20"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:text="True Crime" />
 
     <Button
         android:id="@+id/button21"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
         android:text="Travel" />
 </LinearLayout>
