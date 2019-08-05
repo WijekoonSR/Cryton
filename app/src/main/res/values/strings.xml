@@ -94,4 +94,23 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string-array name ="privacy">
+
+        <item>only me</item>
+        <item>public</item>
+        <item>only frinds</item>
+
+
+
+    </string-array>
+
+    <string-array name ="privacy_option">
+
+        <item>Yes</item>
+        <item>No</item>
+
+
+
+
+    </string-array>
 </resources>
