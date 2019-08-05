@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".request_book_view"></activity>
+        <activity android:name=".user_manager_view_acc__settings"></activity>
+        <activity android:name=".request_book_view" />
         <activity android:name=".user_manager_view_acc" />
         <activity android:name=".request_books_manager" />
         <activity android:name=".feedback_manager" />
