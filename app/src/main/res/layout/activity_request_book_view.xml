@@ -50,13 +50,13 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="216dp"
-        android:layout_height="46dp"
+        android:layout_width="99dp"
+        android:layout_height="53dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Eric Summers"
+        android:text="Novel"
         tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="242dp" />
+        tools:layout_editor_absoluteY="239dp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -64,7 +64,7 @@
         android:layout_height="46dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Novel"
+        android:text="Jane Eyre"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="292dp" />
 
