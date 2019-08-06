@@ -14,6 +14,7 @@ public class user_manager_view_acc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_manager_view_acc);
 
+        //account settings
         textView = findViewById(R.id.view_account);
 
         textView.setOnClickListener(new View.OnClickListener() {
