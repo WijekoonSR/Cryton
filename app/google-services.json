@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "977663267295",
+    "firebase_url": "https://cryton-3c2c4.firebaseio.com",
+    "project_id": "cryton-3c2c4",
+    "storage_bucket": "cryton-3c2c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977663267295:android:8fb03672a799dc0046346a",
+        "android_client_info": {
+          "package_name": "com.application.ultimatee_bookreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977663267295-al9i91espemopjm1h6q1ef9frdslp6fo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.ultimatee_bookreader",
+            "certificate_hash": "8f42decd964d2f0e083cb91a5b3ef09cfc987da0"
+          }
+        },
+        {
+          "client_id": "977663267295-usrfirkr02pg7ofdks17k7mhpphn91si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp89Ro1kg7rbEI9_tu5Y_zebDs8LKv1jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977663267295-usrfirkr02pg7ofdks17k7mhpphn91si.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
