@@ -1,14 +1,16 @@
-package com.application.ultimatee_bookreader;
+package com.application.ultimatee_bookreader.Avinash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.application.ultimatee_bookreader.R;
 
 public class user_manager_view_delete_acc extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_manager_view_delete_acc);
+        setContentView( R.layout.activity_user_manager_view_delete_acc);
     }
 }
