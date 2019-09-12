@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.application.ultimatee_bookreader.Avinash.user_manager_view_acc;
-import com.application.ultimatee_bookreader.Avinash.user_manager_view_privacy;
-import com.application.ultimatee_bookreader.Avinash.user_manager_view_securtity;
+import com.application.ultimatee_bookreader.user_manager_view_acc;
+import com.application.ultimatee_bookreader.user_manager_view_privacy;
+import com.application.ultimatee_bookreader.user_manager_view_securtity;
 
 public class DashBoard extends AppCompatActivity {
 
