@@ -1,88 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BooksManager" >
+    android:outlineAmbientShadowColor="@color/cardview_dark_background"
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="440dp"
-        android:layout_height="49dp">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:text="Arts and Music" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="match_parent"
-        android:layout_height="73dp"
-        android:text="Biographies" />
-
-    <Button
-        android:id="@+id/Suggestions"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:text="Business" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:text="Kids" />
-
-    <Button
-        android:id="@+id/Compliment"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comics" />
+        android:text="Select Topic"
+        android:layout_marginLeft="150dp"
+        android:textSize="20dp"
+        android:layout_marginVertical="20dp"
+        ></TextView>
 
-    <Button
-        android:id="@+id/Submit"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:text="Computers and Tech" />
+    <ScrollView android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
-    <Button
-        android:id="@+id/Cancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cookings" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="3"
+            android:outlineAmbientShadowColor="@color/cardview_dark_background"
+            >
 
-    <Button
-        android:id="@+id/btn_romance"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:text="Romance" />
 
-    <Button
-        android:id="@+id/button18"
-        android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:text="Sports" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
-    <Button
-        android:id="@+id/button19"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teen" />
+                <LinearLayout
+                    android:id="@+id/layoutViewBooks"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
 
-    <Button
-        android:id="@+id/button20"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:text="True Crime" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-    <Button
-        android:id="@+id/button21"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:text="Travel" />
+                    <ImageButton
+                        android:id="@+id/imgbtnBiography"
+                        android:layout_width="53dp"
+                        android:layout_height="51dp"
+                        android:background="#ffffff"
+                        android:forceDarkAllowed="false"
+                        app:srcCompat="@drawable/biography" />
+
+                    <TextView
+                        android:id="@+id/lblBiography"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgbtnBiography"
+                        android:layout_marginTop="8dp"
+                        android:text="Biography"
+                        android:textColor="#0E0E0E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:id="@+id/imgbtnFantasy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fantasy_48px"
+                        app:srcCompat="@drawable/fantasy_48px"
+                        android:background="#ffffff"
+                        />
+
+                    <TextView
+                        android:id="@+id/lblFantasy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgbtnFantasy"
+                        android:layout_marginTop="8dp"
+                        android:text="Fantasy"
+                        android:textColor="#0E0E0E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:id="@+id/imgbtnHorror"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/horror"
+                        app:srcCompat="@drawable/horror"
+                        android:background="#ffffff"
+                        />
+
+                    <TextView
+                        android:id="@+id/lblHorror"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgbtnHorror"
+                        android:layout_marginTop="8dp"
+                        android:text="Horror"
+                        android:textColor="#0E0E0E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>               <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageButton
+                    android:id="@+id/imgbtnMystery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mystery_48px"
+                    app:srcCompat="@drawable/mystery_48px"
+                    android:background="#ffffff"/>
+
+                <TextView
+                    android:id="@+id/lblMystery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imgbtnMystery"
+                    android:layout_marginTop="8dp"
+                    android:text="Mystery"
+                    android:textColor="#0E0E0E" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:id="@+id/imgbtnRomance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/romancel_48px"
+                        app:srcCompat="@drawable/romancel_48px"
+                        android:background="#ffffff" />
+
+                    <TextView
+                        android:layout_below="@id/imgbtnRomance"
+                        android:layout_marginTop="8dp"
+                        android:text="Romance"
+                        android:textColor="#0E0E0E"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:id="@+id/imgbtnScience"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/science_48px"
+                        app:srcCompat="@drawable/science_48px"
+                        android:background="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/science"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgbtnScience"
+                        android:layout_marginTop="8dp"
+                        android:text="Science"
+                        android:textColor="#0E0E0E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:id="@+id/imgbtnTextile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/textile_48px"
+                        app:srcCompat="@drawable/textile_48px"
+                        android:background="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/lblTextile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgbtnTextile"
+                        android:layout_marginTop="8dp"
+                        android:text="Textile"
+                        android:textColor="#0E0E0E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageButton
+                        android:id="@+id/imgbtnWestern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/western_48px"
+                        app:srcCompat="@drawable/western_48px"
+                        android:background="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/lblWestern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgbtnWestern"
+                        android:layout_marginTop="8dp"
+                        android:text="Western"
+                        android:textColor="#0E0E0E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </ScrollView>
+
 </LinearLayout>
