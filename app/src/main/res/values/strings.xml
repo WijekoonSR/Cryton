@@ -94,11 +94,51 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="rate_our_app">Rate our app</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="compliment">Compliment</string>
+    <string name="please_leave_your_feedback_below">Please leave your feedback below</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="delete1">Delete</string>
+    <string name="delete2">Delete</string>
+    <string name="please_add_some_maths_books">Please add some Maths books.</string>
+    <string name="text">text</string>
+    <string name="text1">text</string>
+    <string name="text2">text</string>
+    <string name="text3">text</string>
+    <string name="text4">text</string>
+    <string name="the_books_were_very_helpful">The books were very helpful.</string>
+    <string name="text5">text</string>
+    <string name="please_update_some_new_books">Please update some new books</string>
+    <string name="text6">text</string>
+    <string name="feedback_view">Feedback View</string>
+    <string name="chamath">Chamath</string>
+    <string name="avinash">Avinash</string>
+    <string name="supun">Supun</string>
+    <string name="navodya">Navodya</string>
+    <string name="picture1">picture</string>
+    <string name="picture2">picture</string>
+
+    <string name="picture3">picture</string>
+    <string name="picture4">picture</string>
+    <string name="deler">deler</string>
+    <string name="edit">edit</string>
+    <string name="edit1">edit</string>
+    <string name="edit2">edit</string>
+    <string name="edit3">edit</string>
+    <string name="the_books_were_very_helpful_for_me">The books were very helpful for me</string>
+    <string name="please_select_your_feedback_category">Please Select Your Feedback Category</string>
+
+    <string name="email">Email</string>
+    <string name="name">name</string>
+    <string name="your_app_is_awesome">Your app is awesome</string>
     <string-array name="privacy">
 
         <item>only me</item>
         <item>public</item>
-        <item>only frinds</item>
+        <item>only friends</item>
 
 
     </string-array>
