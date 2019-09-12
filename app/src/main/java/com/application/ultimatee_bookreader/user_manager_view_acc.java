@@ -1,4 +1,4 @@
-package com.application.ultimatee_bookreader.Avinash;
+package com.application.ultimatee_bookreader;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-import com.application.ultimatee_bookreader.R;
 
 public class user_manager_view_acc extends AppCompatActivity {
     TextView textView;

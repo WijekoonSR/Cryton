@@ -1,4 +1,4 @@
-package com.application.ultimatee_bookreader.Avinash;
+package com.application.ultimatee_bookreader;
 
 import androidx.appcompat.app.AppCompatActivity;
 

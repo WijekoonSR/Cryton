@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Avinash.user_manager_view_privacy"></activity>
+        <activity android:name=".user_manager_view_privacy"></activity>
         <activity android:name=".request_book_view" />
-        <activity android:name=".Avinash.user_manager_view_acc" />
+        <activity android:name=".user_manager_view_acc" />
         <activity android:name=".request_books_manager" />
         <activity android:name=".feedback_manager" />
-        <activity android:name=".Avinash.user_manager" />
+        <activity android:name=".user_manager" />
         <activity android:name=".DashBoard" />
         <activity android:name=".BooksManager" />
-        <activity android:name=".Avinash.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

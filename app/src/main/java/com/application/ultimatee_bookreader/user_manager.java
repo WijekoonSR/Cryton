@@ -1,4 +1,4 @@
-package com.application.ultimatee_bookreader.Avinash;
+package com.application.ultimatee_bookreader;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.application.ultimatee_bookreader.R;
-import com.application.ultimatee_bookreader.databaseHelper;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -44,7 +42,7 @@ public class user_manager extends AppCompatActivity {
 
                 dbRef = FirebaseDatabase.getInstance().getReference().child("User");
 
-                user.setUserID("US0001");
+               // user.setUserID("US0001");
                 user.setUserName(txtUN.getText().toString().trim());
                 user.setEmail(txtEmail.getText().toString().trim());
                 user.setPassword(txtPass.getText().toString().trim());

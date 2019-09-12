@@ -1,4 +1,4 @@
-package com.application.ultimatee_bookreader.Avinash;
+package com.application.ultimatee_bookreader;
 
 public class User {
 
