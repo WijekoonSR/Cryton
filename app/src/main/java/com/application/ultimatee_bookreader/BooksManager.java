@@ -14,15 +14,14 @@ public class BooksManager extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books_manager);
 
-        Button  button;
-        button = (Button)findViewById(R.id.btnReqBooks);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(BooksManager.this, books_manager_display.class);
-                startActivity(i);
-                //hhh
-            }
-        });
+
+    }
+
+    private void getIntent(View v){
+        switch(v.getId()){
+//            case R.id.imgbtnBiography : startActivity(new Intent(BooksManager.this,books_manager_view.class ));
+
+        }
+
     }
 }
