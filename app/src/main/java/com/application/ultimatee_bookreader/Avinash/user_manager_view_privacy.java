@@ -1,4 +1,4 @@
-package com.application.ultimatee_bookreader;
+package com.application.ultimatee_bookreader.Avinash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.application.ultimatee_bookreader.R;
 
 public class user_manager_view_privacy extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 private Spinner spinner;

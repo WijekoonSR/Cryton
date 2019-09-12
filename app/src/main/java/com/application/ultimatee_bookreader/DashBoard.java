@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.application.ultimatee_bookreader.Avinash.user_manager_view_acc;
+import com.application.ultimatee_bookreader.Avinash.user_manager_view_privacy;
+import com.application.ultimatee_bookreader.Avinash.user_manager_view_securtity;
+
 public class DashBoard extends AppCompatActivity {
 
     Button button;
@@ -49,7 +53,7 @@ public class DashBoard extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this,user_manager_view_acc.class);
+                Intent i = new Intent(DashBoard.this, user_manager_view_acc.class);
                 startActivity(i);
                 //hhh
             }
@@ -69,7 +73,7 @@ public class DashBoard extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this,user_manager_view_privacy.class);
+                Intent i = new Intent(DashBoard.this, user_manager_view_privacy.class);
                 startActivity(i);
                 //hhh
             }
@@ -79,7 +83,7 @@ public class DashBoard extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this,user_manager_view_securtity.class);
+                Intent i = new Intent(DashBoard.this, user_manager_view_securtity.class);
                 startActivity(i);
                 //hhh
             }

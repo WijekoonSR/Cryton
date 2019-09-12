@@ -14,7 +14,7 @@
         android:background="#FDFBFDFF">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/RateOurApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -23,19 +23,19 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Rate our app"
+            android:text="@string/rate_our_app"
             android:textColor="#070707"
             android:textSize="24sp"
             app:fontFamily="sans-serif-black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.058" />
+            app:layout_constraintVertical_bias="0.057" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/SelectFeedBackCatergory"
             style="@android:style/Widget.DeviceDefault.TextView.SpinnerItem"
             android:layout_width="341dp"
             android:layout_height="28dp"
@@ -45,19 +45,19 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Please select your feedback catergory"
+            android:text="@string/please_select_your_feedback_category"
             android:textColor="#030303"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.407"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.308" />
+            app:layout_constraintVertical_bias="0.311" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/Suggestions"
             style="@android:style/Widget.Material.Button.Colored"
             android:layout_width="118dp"
             android:layout_height="50dp"
@@ -68,41 +68,42 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:background="#F7741D49"
-            android:text="Suggestions"
+            android:text="@string/suggestions"
             android:textColor="#FFFFFF"
-            android:textColorLink="#E67A434A"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.209"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.421"
-            tools:targetApi="23" />
-
-        <Button
-            android:id="@+id/button14"
-            style="@android:style/Widget.Material.Button.Colored"
-            android:layout_width="118dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="#F7741D49"
-            android:text="Compliment"
+            android:textColorLink="@color/colorPrimary"
             android:textCursorDrawable="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.65"
-            app:layout_constraintStart_toStartOf="@+id/button12"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.424"
+            app:layout_constraintVertical_bias="0.417"
+            tools:targetApi="23" />
+
+        <Button
+            android:id="@+id/Compliment"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:layout_width="118dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#F7741D49"
+            android:text="@string/compliment"
+            android:textCursorDrawable="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.838"
+            app:layout_constraintStart_toStartOf="@+id/Suggestions"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.417"
             tools:targetApi="23" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/LeaveFeedback"
             style="@android:style/Widget.DeviceDefault.Light.TextView.SpinnerItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,19 +113,19 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Please leave your feedback below"
+            android:text="@string/please_leave_your_feedback_below"
             android:textColor="#0A0A0A"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.26"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.525" />
+            app:layout_constraintVertical_bias="0.531" />
 
         <Button
-            android:id="@+id/button15"
+            android:id="@+id/Submit"
             style="@android:style/Widget.Material.Button.Inset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,19 +134,19 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="#43A3AD"
-            android:text="Submit"
+            android:text="@string/submit"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.323"
+            app:layout_constraintHorizontal_bias="0.222"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.958"
+            app:layout_constraintVertical_bias="0.957"
             tools:targetApi="21" />
 
         <Button
-            android:id="@+id/button16"
+            android:id="@+id/Cancel"
             style="@android:style/Widget.Material.Button.Inset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,19 +157,19 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:background="#43A3AD"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.71"
+            app:layout_constraintHorizontal_bias="0.781"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.958"
+            app:layout_constraintVertical_bias="0.955"
             tools:targetApi="21" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/Feedback"
             android:layout_width="351dp"
             android:layout_height="111dp"
             android:layout_marginStart="8dp"
@@ -177,17 +178,23 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
+            android:visibility="visible"
+            android:hint="@string/text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.829" />
+            app:layout_constraintVertical_bias="0.829"
+            tools:targetApi="o"
+            tools:visibility="visible" />
 
         <RatingBar
             android:id="@+id/ratingBar"
+            style="@android:style/Widget.Material.Light.RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -196,13 +203,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#99968E"
+            android:background="#FAFAFA"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.161" />
+            app:layout_constraintVertical_bias="0.161" tools:targetApi="lollipop"/>
 
         <View
             android:id="@+id/divider"
@@ -215,13 +222,13 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="21dp"
             android:background="#FAFCFC"
-            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintBottom_toTopOf="@+id/SelectFeedBackCatergory"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/Name"
             android:layout_width="171dp"
             android:layout_height="49dp"
             android:layout_marginStart="8dp"
@@ -230,20 +237,23 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:autofillHints=""
             android:ems="10"
             android:fadingEdge="none"
+            android:hint="@string/name"
             android:inputType="textPersonName"
-            android:text="Name"
-            android:textColor="#090808"
+            android:text="@string/name"
+            android:textColor="#FC090808"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintHorizontal_bias="0.022"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626" />
+            app:layout_constraintVertical_bias="0.622"
+            tools:targetApi="o" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/Email"
             android:layout_width="171dp"
             android:layout_height="49dp"
             android:layout_marginStart="8dp"
@@ -252,16 +262,19 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:autofillHints=""
             android:ems="10"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="#FC070707"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
+            app:layout_constraintHorizontal_bias="0.973"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.626" />
+            app:layout_constraintVertical_bias="0.624"
+            tools:targetApi="o" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

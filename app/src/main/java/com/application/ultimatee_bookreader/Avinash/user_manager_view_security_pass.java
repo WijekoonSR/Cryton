@@ -1,8 +1,10 @@
-package com.application.ultimatee_bookreader;
+package com.application.ultimatee_bookreader.Avinash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.application.ultimatee_bookreader.R;
 
 public class user_manager_view_security_pass extends AppCompatActivity {
 

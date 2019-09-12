@@ -27,7 +27,7 @@
         android:text="Biographies" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/Suggestions"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:text="Business" />
@@ -39,19 +39,19 @@
         android:text="Kids" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/Compliment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Comics" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/Submit"
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:text="Computers and Tech" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/Cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cookings" />
