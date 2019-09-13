@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +19,7 @@ public class user_manager extends AppCompatActivity {
     Button signupbtn,btnBack;
     EditText txtUN,txtEmail,txtPass,txtConPass;
     CheckBox terms;
+    TextView usernameLbl,usernameLbl2;
 
 
     DatabaseReference dbRef;
@@ -43,80 +45,12 @@ public class user_manager extends AppCompatActivity {
         txtConPass = findViewById(R.id.txt_con_pass);
         btnBack = findViewById(R.id.btn_Back2);
         terms = (CheckBox) findViewById(R.id.check_box_terms);
-
-
-
+        usernameLbl = findViewById(R.id.lbl_username);
+        usernameLbl2= findViewById(R.id.lbl_username2);
 
 
 
         user = new User();
-
-
-
-
-
-            signupbtn.setOnClickListener(new View.OnClickListener() {
-
-
-
-
-
-                public void onClick(View v) {
-
-
-                    //terms and condtions check
-
-                    if (terms.isChecked() == true) {
-
-                        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
-
-                        // user.setUserID("US0001");
-                        user.setUserName(txtUN.getText().toString().trim());
-                        user.setEmail(txtEmail.getText().toString().trim());
-                        user.setPassword(txtPass.getText().toString().trim());
-                        user.setConPassword(txtConPass.getText().toString().trim());
-
-
-
-
-                            //check confirm pass and entered pass
-                            if (user.getConPassword().equals(user.getPassword())) {
-
-                                dbRef.push().setValue(user);
-
-                                Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
-
-
-                                txtUN.setText(null);
-                                txtEmail.setText(null);
-                                txtPass.setText(null);
-                                txtConPass.setText(null);
-
-                            } else {
-
-                                Toast.makeText(getApplicationContext(), "RE enter the password ! ", Toast.LENGTH_LONG).show();
-
-                            }
-
-                        } else {
-
-
-                            Toast.makeText(getApplicationContext(), "Accept the terms and conditions ! ", Toast.LENGTH_SHORT).show();
-
-
-                        }
-
-
-                    }
-
-
-
-            });
-
-
-
-
-
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +62,104 @@ public class user_manager extends AppCompatActivity {
 
             }
         });
+
+
+
+        signupbtn.setOnClickListener(new View.OnClickListener() {
+
+
+            public void onClick(View v) {
+
+
+                //terms and conditions check
+
+
+                dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+
+
+                user.setUserName(txtUN.getText().toString().trim());
+                user.setEmail(txtEmail.getText().toString().trim());
+                user.setPassword(txtPass.getText().toString().trim());
+                user.setConPassword(txtConPass.getText().toString().trim());
+
+
+                String usernmae = txtUN.getText().toString().trim();
+                String email = txtEmail.getText().toString().trim();
+                String password = txtPass.getText().toString().trim();
+                String conpassword = txtConPass.getText().toString().trim();
+
+
+                usernameLbl.setText(null);
+                usernameLbl2.setText(null);
+
+
+                if (!usernmae.matches("[0-9a-zA-Z]+")) {
+
+                    usernameLbl.setText("Invalid UserName");
+
+
+                    Toast.makeText(getApplicationContext(), "please Enter UserName again", Toast.LENGTH_SHORT).show();
+
+
+                    return;
+
+
+                }
+
+                if (!email.matches("[0-9@a-zA-Z]+")) {
+
+                    usernameLbl2.setText("Invalid Email");
+
+                    Toast.makeText(getApplicationContext(), "please Enter Email again", Toast.LENGTH_SHORT).show();
+
+
+                    return;
+
+                }
+
+
+                if (!password.isEmpty()) {
+
+                    if (password.equals(conpassword)) {
+
+                        Toast.makeText(getApplicationContext(), "sign up successfully ", Toast.LENGTH_SHORT).show();
+
+
+                        dbRef.child("std1").setValue(user);
+
+
+                        txtUN.setText(null);
+                        txtEmail.setText(null);
+                        txtPass.setText(null);
+                        txtConPass.setText(null);
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), "re-Enter the password ", Toast.LENGTH_SHORT).show();
+                        txtPass.setText(null);
+                        txtConPass.setText(null);
+
+                    }
+
+                }
+
+                else{
+
+                    Toast.makeText(getApplicationContext(), "Enter the password ", Toast.LENGTH_SHORT).show();
+                    txtPass.setText(null);
+                    txtConPass.setText(null);
+
+                }
+
+            }
+
+
+
+            });
+
+
+
+
 
     }
 

@@ -61,40 +61,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("User");
-
-                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        if (dataSnapshot.hasChildren()){
-
-                            usernametxt.setText(dataSnapshot.child("userName").getValue().toString());
-                            password.setText(dataSnapshot.child("password").getValue().toString());
-
-
-                        }else{
-                            Toast.makeText(getApplicationContext(),"No Source",Toast.LENGTH_LONG).show();
-                        }
-                    }
 
 
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
 
 
-
-            }
-        });
 
 
     }
