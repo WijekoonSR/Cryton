@@ -134,6 +134,7 @@
     <string name="email">Email</string>
     <string name="name">name</string>
     <string name="your_app_is_awesome">Your app is awesome</string>
+
     <string-array name="privacy">
 
         <item>only me</item>
@@ -150,4 +151,18 @@
 
 
     </string-array>
+
+    <!-- Books manager strings   -->
+    <string-array name="bookTypes">
+        <item>biography</item>
+        <item>fanatasy</item>
+        <item>horror</item>
+        <item>mystery</item>
+        <item>romance</item>
+        <item>science</item>
+        <item>textile</item>
+        <item>western</item>
+    </string-array>
+    <string name="promptBook">Select Book Type</string>
+    <string name = "fileSelected">please attach file !</string>
 </resources>
