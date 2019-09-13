@@ -22,10 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button loginbtn , signupbtn;
-    EditText usernametxt, password;
+    EditText usernametxt, password,userName;
 
-    DatabaseReference dbRef;
-
+    DatabaseReference readRef;
 
     User user;
 
@@ -39,18 +38,19 @@ public class MainActivity extends AppCompatActivity {
         loginbtn = findViewById(R.id.btn_login);
         signupbtn = findViewById(R.id.btn_sign_up);
         loginbtn = findViewById(R.id.btn_login);
-        usernametxt = findViewById(R.id.txt_name);
         password = findViewById(R.id.txt_password);
+        userName = findViewById(R.id.txt_name);
 
 
 
-        loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, DashBoard.class);
-                startActivity(i);
-            }
-        });
+
+//        loginbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainActivity.this, user_manager_view_acc.class);
+//                startActivity(i);
+//            }
+//        });
 
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +60,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+
+                 readRef = FirebaseDatabase.getInstance().getReference().child("User");
+                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                         if (dataSnapshot.hasChildren()) {
+                             userName.setText(dataSnapshot.child("User").getValue().toString());
+                             password.setText(dataSnapshot.child("User").getValue().toString());
+                         }
+                         else{
+                             Toast.makeText(getApplicationContext(),"No Source",Toast.LENGTH_LONG).show();
+                         }
+
+                     }
+
+
+                     public void onCancelled(@NonNull DatabaseError databaseError) {
+
+
+                     }
+                 });
+
+
+
+
+            }
+        });
 
 
 

@@ -21,8 +21,10 @@ public class user_manager extends AppCompatActivity {
     CheckBox terms;
     TextView usernameLbl,usernameLbl2;
 
-
     DatabaseReference dbRef;
+
+
+    int n;
 
     User user;
 
@@ -76,7 +78,16 @@ public class user_manager extends AppCompatActivity {
 
                 if (terms.isChecked() == true) {
 
-                    dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+
+
+                    dbRef = FirebaseDatabase.getInstance().getReference().child("user");
+
+
+
+
+
+
+
 
 
                     user.setUserName(txtUN.getText().toString().trim());
@@ -108,7 +119,7 @@ public class user_manager extends AppCompatActivity {
 
                     }
 
-                    if (!email.matches("[0-9@a-zA-Z]+")) {
+                    if (!email.matches("[0-9@a-zA-Z.]+")) {
 
                         usernameLbl2.setText("Invalid Email");
 
@@ -127,14 +138,20 @@ public class user_manager extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "sign up successfully ", Toast.LENGTH_SHORT).show();
 
 
-//                        dbRef.child("User").setValue(user);
-                            dbRef.push().setValue(user);
 
 
-                            txtUN.setText(null);
-                            txtEmail.setText(null);
-                            txtPass.setText(null);
-                            txtConPass.setText(null);
+
+                                n++;
+
+
+                                dbRef.child(String.valueOf(n)).setValue(user);
+
+
+
+                                txtUN.setText(null);
+                                txtEmail.setText(null);
+                                txtPass.setText(null);
+                                txtConPass.setText(null);
 
                         } else {
 
@@ -174,3 +191,4 @@ public class user_manager extends AppCompatActivity {
 
 
 }
+
