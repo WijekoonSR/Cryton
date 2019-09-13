@@ -74,68 +74,79 @@ public class user_manager extends AppCompatActivity {
                 //terms and conditions check
 
 
-                dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+                if (terms.isChecked() == true) {
+
+                    dbRef = FirebaseDatabase.getInstance().getReference().child("User");
 
 
-                user.setUserName(txtUN.getText().toString().trim());
-                user.setEmail(txtEmail.getText().toString().trim());
-                user.setPassword(txtPass.getText().toString().trim());
-                user.setConPassword(txtConPass.getText().toString().trim());
+                    user.setUserName(txtUN.getText().toString().trim());
+                    user.setEmail(txtEmail.getText().toString().trim());
+                    user.setPassword(txtPass.getText().toString().trim());
+                    user.setConPassword(txtConPass.getText().toString().trim());
 
 
-                String usernmae = txtUN.getText().toString().trim();
-                String email = txtEmail.getText().toString().trim();
-                String password = txtPass.getText().toString().trim();
-                String conpassword = txtConPass.getText().toString().trim();
+                    String usernmae = txtUN.getText().toString().trim();
+                    String email = txtEmail.getText().toString().trim();
+                    String password = txtPass.getText().toString().trim();
+                    String conpassword = txtConPass.getText().toString().trim();
 
 
-                usernameLbl.setText(null);
-                usernameLbl2.setText(null);
+                    usernameLbl.setText(null);
+                    usernameLbl2.setText(null);
 
 
-                if (!usernmae.matches("[0-9a-zA-Z]+")) {
+                    if (!usernmae.matches("[0-9a-zA-Z]+")) {
 
-                    usernameLbl.setText("Invalid UserName");
-
-
-                    Toast.makeText(getApplicationContext(), "please Enter UserName again", Toast.LENGTH_SHORT).show();
+                        usernameLbl.setText("Invalid UserName");
 
 
-                    return;
+                        Toast.makeText(getApplicationContext(), "please Enter UserName again", Toast.LENGTH_SHORT).show();
 
 
-                }
-
-                if (!email.matches("[0-9@a-zA-Z]+")) {
-
-                    usernameLbl2.setText("Invalid Email");
-
-                    Toast.makeText(getApplicationContext(), "please Enter Email again", Toast.LENGTH_SHORT).show();
+                        return;
 
 
-                    return;
+                    }
 
-                }
+                    if (!email.matches("[0-9@a-zA-Z]+")) {
 
+                        usernameLbl2.setText("Invalid Email");
 
-                if (!password.isEmpty()) {
-
-                    if (password.equals(conpassword)) {
-
-                        Toast.makeText(getApplicationContext(), "sign up successfully ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "please Enter Email again", Toast.LENGTH_SHORT).show();
 
 
-                        dbRef.child("std1").setValue(user);
+                        return;
+
+                    }
 
 
-                        txtUN.setText(null);
-                        txtEmail.setText(null);
-                        txtPass.setText(null);
-                        txtConPass.setText(null);
+                    if (!password.isEmpty()) {
+
+                        if (password.equals(conpassword)) {
+
+                            Toast.makeText(getApplicationContext(), "sign up successfully ", Toast.LENGTH_SHORT).show();
+
+
+//                        dbRef.child("User").setValue(user);
+                            dbRef.push().setValue(user);
+
+
+                            txtUN.setText(null);
+                            txtEmail.setText(null);
+                            txtPass.setText(null);
+                            txtConPass.setText(null);
+
+                        } else {
+
+                            Toast.makeText(getApplicationContext(), "re-Enter the password ", Toast.LENGTH_SHORT).show();
+                            txtPass.setText(null);
+                            txtConPass.setText(null);
+
+                        }
 
                     } else {
 
-                        Toast.makeText(getApplicationContext(), "re-Enter the password ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Enter the password ", Toast.LENGTH_SHORT).show();
                         txtPass.setText(null);
                         txtConPass.setText(null);
 
@@ -143,16 +154,13 @@ public class user_manager extends AppCompatActivity {
 
                 }
 
+
                 else{
 
-                    Toast.makeText(getApplicationContext(), "Enter the password ", Toast.LENGTH_SHORT).show();
-                    txtPass.setText(null);
-                    txtConPass.setText(null);
+                    Toast.makeText(getApplicationContext(), "Accept the Terms and Conditions ", Toast.LENGTH_SHORT).show();
 
                 }
-
             }
-
 
 
             });
