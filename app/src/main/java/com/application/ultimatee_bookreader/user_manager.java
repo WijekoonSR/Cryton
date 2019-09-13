@@ -80,7 +80,7 @@ public class user_manager extends AppCompatActivity {
 
 
 
-                    dbRef = FirebaseDatabase.getInstance().getReference().child("user");
+                    dbRef = FirebaseDatabase.getInstance().getReference().child("Sign up");
 
 
 
@@ -141,10 +141,10 @@ public class user_manager extends AppCompatActivity {
 
 
 
-                                n++;
 
 
-                                dbRef.child(String.valueOf(n)).setValue(user);
+
+                                dbRef.child(usernmae).setValue(user);
 
 
 
