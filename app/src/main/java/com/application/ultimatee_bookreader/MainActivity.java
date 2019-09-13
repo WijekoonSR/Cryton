@@ -22,13 +22,13 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button loginbtn , signupbtn;
-    EditText usernametxt, password;
+    EditText username, password;
 
-    DatabaseReference dbRef;
-
+    DatabaseReference readRef,dbRef;
 
     User user;
 
+    user_manager us;
 
 
     @Override
@@ -39,15 +39,16 @@ public class MainActivity extends AppCompatActivity {
         loginbtn = findViewById(R.id.btn_login);
         signupbtn = findViewById(R.id.btn_sign_up);
         loginbtn = findViewById(R.id.btn_login);
-        usernametxt = findViewById(R.id.txt_name);
         password = findViewById(R.id.txt_password);
+        username = findViewById(R.id.txt_name);
+
 
 
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, DashBoard.class);
+                Intent i = new Intent(MainActivity.this, user_manager_view_acc.class);
                 startActivity(i);
             }
         });
@@ -60,6 +61,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+
+                readRef = FirebaseDatabase.getInstance().getReference().child(String.valueOf(username));
+
+
+
+
+
+
+
+            }
+        });
 
 
 
