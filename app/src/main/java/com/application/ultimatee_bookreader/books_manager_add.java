@@ -105,7 +105,7 @@ public class books_manager_add extends AppCompatActivity {
         progressDialog.setProgress(0);
         progressDialog.show();
 
-        final String name = bookName.getText().toString();
+        final String name = bookName.getText().toString()+".pdf";
         final Uri file = pdfUri;
         StorageReference riversRef = mStorageRef.child(name);
 
@@ -113,7 +113,7 @@ public class books_manager_add extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        book = new Books();
+                        book = new Books("","","","","");
                         book.setBookname(bookName.getText().toString());
                         book.setAuthor(author.getText().toString());
                         book.setDetails(bookDetails.getText().toString());

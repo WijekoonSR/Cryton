@@ -33,11 +33,11 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
         save = findViewById(R.id.btn_save);
 
 //button save
-        button = (Button)findViewById(R.id.btn_save);
+        button = (Button) findViewById(R.id.btn_save);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent t = new Intent(user_manager_view_acc__settings.this,user_manager_view_acc__settings.class);
+                Intent t = new Intent(user_manager_view_acc__settings.this, user_manager_view_acc__settings.class);
                 startActivity(t);
 
             }
@@ -50,13 +50,11 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a = new Intent(user_manager_view_acc__settings.this,user_manager_view_acc.class);
+                Intent a = new Intent(user_manager_view_acc__settings.this, user_manager_view_acc.class);
                 startActivity(a);
 
             }
         });
-
-
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -67,13 +65,13 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChildren()){
+                        if (dataSnapshot.hasChildren()) {
                             edit_name.setText(dataSnapshot.child("username").getValue().toString());
                             edit_email.setText(dataSnapshot.child("email").getValue().toString());
                             edit_number.setText(dataSnapshot.child("password").getValue().toString());
                             edit_address.setText(dataSnapshot.child("conPassword").getValue().toString());
-                        }else{
-                            Toast.makeText(getApplicationContext(),"No Source",Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "No Source", Toast.LENGTH_LONG).show();
                         }
                     }
 
@@ -84,12 +82,9 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                 });
 
 
+            }
 
 
-
-
+        });
     }
-
-
-
-    }
+}
