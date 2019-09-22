@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.LineNumberReader;
+
 public class user_manager_view_acc__settings extends AppCompatActivity {
 
     Button save,back,edit;
@@ -25,7 +27,9 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
     String userName;
 
 
-    DatabaseReference Dbupdate;
+
+
+        DatabaseReference Dbupdate;
 
 
 
@@ -92,27 +96,43 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child("no");
+                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.hasChildren()){
 
 
-                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("SignUp");//.child("Accounts");
+                            try {
 
+                                user.setUserName(name.getText().toString().trim());
+                                user.setEmail(email.getText().toString().trim());
+                                user.setPassword(password.getText().toString().trim());
 
+                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference().child("Accounts");
+                                updateDB.setValue("Accounts");
 
+                                Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
+                            }
 
+                            catch (NumberFormatException e ){
 
+                                Toast.makeText(getApplicationContext(),"Invalid contact Number ",Toast.LENGTH_LONG).show();
 
+                            }
+                        }else{
+                            Toast.makeText(getApplicationContext(),"No source  to update ",Toast.LENGTH_LONG).show();
 
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                user.setUserName(name.getText().toString().trim());
-                user.setEmail(email.getText().toString().trim());
-                user.setPassword(password.getText().toString().trim());
-
-
-
-                dbRef.push().setValue(user);
-                dbRef.child("Accounts").setValue(user);
+                    }
+                });
 
 
 
@@ -120,6 +140,15 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
         });
 
 
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent bac = new Intent(getApplicationContext(),user_manager_view_acc.class);
+                startActivity(bac);
+            }
+        });
 
     }
 
