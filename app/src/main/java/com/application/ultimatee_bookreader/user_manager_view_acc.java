@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +19,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class user_manager_view_acc extends AppCompatActivity {
 
-    TextView accSettings,accDele;
+    TextView accSettings,accDele,accpri;
     String userName;
+    Button back;
+
 
 
     @Override
@@ -34,7 +37,8 @@ public class user_manager_view_acc extends AppCompatActivity {
 
         accSettings = findViewById(R.id.view_account);
         accDele = findViewById(R.id.view_dele_acc);
-
+        accpri = findViewById(R.id.view_Privacy);
+        back = findViewById(R.id.btn_back);
 
         accSettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,10 +80,25 @@ public class user_manager_view_acc extends AppCompatActivity {
        });
 
 
+       accpri.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               Intent pr = new Intent(getApplicationContext(),user_manager_view_privacy.class);
+               startActivity(pr);
+
+           }
+       });
 
 
 
-
+       back.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent back = new Intent(getApplicationContext(),DashBoard.class);
+               startActivity(back);
+           }
+       });
 
     }
 

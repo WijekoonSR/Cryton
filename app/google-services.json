@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "977663267295-m3f9cm6mh8p35oo71al5qsiovs67hqo4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.ultimatee_bookreader",
+            "certificate_hash": "068e84120563cfb7aa3c91f72419fefcb02c4611"
+          }
+        },
+        {
           "client_id": "977663267295-2rbknlg6ldsigiv0fpsga9d0hviskhbs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

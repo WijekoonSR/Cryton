@@ -37,13 +37,13 @@ public class user_manager_view_delete_acc extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
+                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("std1")){
-                           DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("Student").child("std1");
+                        if (dataSnapshot.hasChild("q")){
+                           DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
                             dbRef.removeValue();
                             Toast.makeText(getApplicationContext(),"Deleted",Toast.LENGTH_LONG).show();
                         }

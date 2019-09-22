@@ -56,7 +56,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
 
 
 
-        DatabaseReference Dbupdate = FirebaseDatabase.getInstance().getReference("Sign up").child("no");
+        DatabaseReference Dbupdate = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
         Dbupdate.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -64,9 +64,6 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                     name.setText(dataSnapshot.child("userName").getValue().toString());
                     email.setText(dataSnapshot.child("email").getValue().toString());
                     password.setText(dataSnapshot.child("password").getValue().toString());
-
-
-
 
                 }else{
                     Toast.makeText(getApplicationContext(),"No Source",Toast.LENGTH_LONG).show();
@@ -80,25 +77,20 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
         });
 
 
-                           edit.setOnClickListener(new View.OnClickListener() {
-                               @Override
-                               public void onClick(View view) {
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
 
-
-
-
-
-
-                               }
-                           });
+            }
+        });
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child("no");
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -111,8 +103,8 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                                 user.setEmail(email.getText().toString().trim());
                                 user.setPassword(password.getText().toString().trim());
 
-                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference().child("Accounts");
-                                updateDB.setValue("Accounts");
+                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+                                updateDB.setValue(user);
 
                                 Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
                             }
