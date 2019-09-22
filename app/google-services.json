@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "977663267295-2rbknlg6ldsigiv0fpsga9d0hviskhbs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.ultimatee_bookreader",
+            "certificate_hash": "0c5d15b12c57b9a903aa989d753398b8b2fa9393"
+          }
+        },
+        {
+          "client_id": "977663267295-o2somdpba15qso5le633hrd3p50go6vr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.ultimatee_bookreader",
+            "certificate_hash": "67e46ab76c5c4f1e89b465feab7039439577b576"
+          }
+        },
+        {
           "client_id": "977663267295-al9i91espemopjm1h6q1ef9frdslp6fo.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

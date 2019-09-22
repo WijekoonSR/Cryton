@@ -1,5 +1,6 @@
 package com.application.ultimatee_bookreader;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class user_manager extends AppCompatActivity {
 
@@ -24,9 +28,10 @@ public class user_manager extends AppCompatActivity {
     DatabaseReference dbRef;
 
 
-    int n;
+
 
     User user;
+
 
 
 
@@ -40,13 +45,12 @@ public class user_manager extends AppCompatActivity {
         setContentView(R.layout.activity_user_manager);
 
         signupbtn = findViewById(R.id.btn_sign_up2);
-//        txtID = findViewById(R.id.etID);
         txtUN = findViewById(R.id.txt_first_name);
         txtEmail = findViewById(R.id.txt_email);
         txtPass = findViewById(R.id.txt_pass);
         txtConPass = findViewById(R.id.txt_con_pass);
         btnBack = findViewById(R.id.btn_Back2);
-        terms = (CheckBox) findViewById(R.id.check_box_terms);
+        terms = findViewById(R.id.check_box_terms);
         usernameLbl = findViewById(R.id.lbl_username);
         usernameLbl2= findViewById(R.id.lbl_username2);
 
@@ -79,15 +83,7 @@ public class user_manager extends AppCompatActivity {
                 if (terms.isChecked() == true) {
 
 
-
-                    dbRef = FirebaseDatabase.getInstance().getReference().child("Sign up");
-
-
-
-
-
-
-
+                    dbRef = FirebaseDatabase.getInstance().getReference("Sign up");
 
 
                     user.setUserName(txtUN.getText().toString().trim());
@@ -111,7 +107,7 @@ public class user_manager extends AppCompatActivity {
                         usernameLbl.setText("Invalid UserName");
 
 
-                        Toast.makeText(getApplicationContext(), "please Enter UserName again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "please Enter The UserName again", Toast.LENGTH_SHORT).show();
 
 
                         return;
@@ -131,21 +127,15 @@ public class user_manager extends AppCompatActivity {
                     }
 
 
-                    if (!password.isEmpty()) {
 
-                        if (password.equals(conpassword)) {
+                        if (!password.isEmpty()) {
 
-                            Toast.makeText(getApplicationContext(), "sign up successfully ", Toast.LENGTH_SHORT).show();
+                            if (password.equals(conpassword)) {
 
-
-
-
-
-
+                                Toast.makeText(getApplicationContext(), "sign up successfully ", Toast.LENGTH_SHORT).show();
 
 
                                 dbRef.child(usernmae).setValue(user);
-
 
 
                                 txtUN.setText(null);
@@ -153,31 +143,31 @@ public class user_manager extends AppCompatActivity {
                                 txtPass.setText(null);
                                 txtConPass.setText(null);
 
+                            } else {
+
+                                Toast.makeText(getApplicationContext(), "re-Enter the password ", Toast.LENGTH_SHORT).show();
+                                txtPass.setText(null);
+                                txtConPass.setText(null);
+
+                            }
+
                         } else {
 
-                            Toast.makeText(getApplicationContext(), "re-Enter the password ", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Enter the password ", Toast.LENGTH_SHORT).show();
                             txtPass.setText(null);
                             txtConPass.setText(null);
 
                         }
 
-                    } else {
 
-                        Toast.makeText(getApplicationContext(), "Enter the password ", Toast.LENGTH_SHORT).show();
-                        txtPass.setText(null);
-                        txtConPass.setText(null);
-
-                    }
 
                 }
-
-
                 else{
 
-                    Toast.makeText(getApplicationContext(), "Accept the Terms and Conditions ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Accept the Terms and Conditions ", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
-            }
 
 
             });

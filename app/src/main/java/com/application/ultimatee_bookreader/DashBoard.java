@@ -7,16 +7,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import android.widget.Toast;
 
 
 public class DashBoard extends AppCompatActivity {
 
-    ImageButton button;
+    ImageButton button,view_acc;
+    String userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
+
+        Intent i = getIntent();
+        userName = i.getStringExtra("userName");
+        String msg = "Welcome "+userName;
+        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+
+       view_acc =findViewById(R.id.imgbtnUser);
+        view_acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sett = new Intent(getApplicationContext(),user_manager_view_acc.class);
+                sett.putExtra("userName",userName);
+                startActivity(sett);
+            }
+        });
+
 
         button = findViewById(R.id.imgbtnViewBooks);
         button.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +95,7 @@ public class DashBoard extends AppCompatActivity {
                 //hhh
             }
         });
-//
+
 //        button = (Button)findViewById(R.id.btnSecurity);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -87,14 +105,14 @@ public class DashBoard extends AppCompatActivity {
 //                //hhh
 //            }
 //        });
-//
 
-//
+
+
         button = findViewById(R.id.imgbtnLogOut);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this,MainActivity.class);
+                Intent i = new Intent(DashBoard.this,user_manager_view_acc__settings.class);
                 startActivity(i);
                 //hhh
             }

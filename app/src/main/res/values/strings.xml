@@ -164,5 +164,5 @@
         <item>western</item>
     </string-array>
     <string name="promptBook">Select Book Type</string>
-    <string name = "fileSelected">please attach file !</string>
+    <string name="fileSelected">please attach file !</string>
 </resources>
