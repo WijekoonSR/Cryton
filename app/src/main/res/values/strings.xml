@@ -165,4 +165,12 @@
         <item>textile</item>
         <item>western</item>
     </string-array>
+
+    <!--    Request Book Manager-->
+    <string name="author">Author</string>
+    <string name="book_type">Book Type</string>
+    <string name="book_name">Book Name</string>
+    <string name="request_a_book">Request a Book</string>
+    <string name="cancel1">CANCEL</string>
+    <string name="submit1">SUBMIT</string>
 </resources>
