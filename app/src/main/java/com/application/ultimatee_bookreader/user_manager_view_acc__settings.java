@@ -56,7 +56,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
 
 
 
-        DatabaseReference Dbupdate = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+        DatabaseReference Dbupdate = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
         Dbupdate.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -90,7 +90,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
