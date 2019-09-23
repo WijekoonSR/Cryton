@@ -1,13 +1,12 @@
 package com.application.ultimatee_bookreader;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class DashBoard extends AppCompatActivity {
@@ -29,7 +28,7 @@ public class DashBoard extends AppCompatActivity {
         view_acc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sett = new Intent(getApplicationContext(),user_manager_view_acc.class);
+                Intent sett = new Intent(getApplicationContext(),user_manager_view_acc__settings.class);
                 sett.putExtra("userName",userName);
                 startActivity(sett);
             }
@@ -75,15 +74,6 @@ public class DashBoard extends AppCompatActivity {
         });
 
 
-        button = findViewById(R.id.imgbtnUser);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this, user_manager_view_acc.class);
-                startActivity(i);
-                //hhh
-            }
-        });
 
         button = findViewById(R.id.imgbtnRequestBooks);
         button.setOnClickListener(new View.OnClickListener() {
@@ -117,15 +107,6 @@ public class DashBoard extends AppCompatActivity {
 
 
 
-        button = findViewById(R.id.imgbtnLogOut);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this,user_manager_view_acc__settings.class);
-                startActivity(i);
-                //hhh
-            }
-        });
 
     }
 }

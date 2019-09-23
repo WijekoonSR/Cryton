@@ -16,6 +16,7 @@
         <activity android:name=".user_manager_view_privacy" />
         <activity android:name=".request_book_view" />
         <activity android:name=".user_manager_view_acc" />
+        <activity android:name=".user_manager_view_acc__settings"/>
         <activity android:name=".request_books_manager" />
         <activity android:name=".feedback_manager" />
         <activity android:name=".user_manager" />
