@@ -1,9 +1,6 @@
 package com.application.ultimatee_bookreader;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.io.LineNumberReader;
 
 public class user_manager_view_acc__settings extends AppCompatActivity {
 
@@ -86,50 +84,50 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
-                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChildren()){
-
-
-                            try {
-
-                                user.setUserName(name.getText().toString().trim());
-                                user.setEmail(email.getText().toString().trim());
-                                user.setPassword(password.getText().toString().trim());
-
-                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
-                                updateDB.setValue(user);
-
-                                Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
-                            }
-
-                            catch (NumberFormatException e ){
-
-                                Toast.makeText(getApplicationContext(),"Invalid contact Number ",Toast.LENGTH_LONG).show();
-
-                            }
-                        }else{
-                            Toast.makeText(getApplicationContext(),"No source  to update ",Toast.LENGTH_LONG).show();
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-
-
-            }
-        });
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
+//                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        if (dataSnapshot.hasChildren()){
+//
+//
+//                            try {
+//
+//                                user.setUserName(name.getText().toString().trim());
+//                                user.setEmail(email.getText().toString().trim());
+//                                user.setPassword(password.getText().toString().trim());
+//
+//                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+//                                updateDB.setValue(user);
+//
+//                                Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
+//                            }
+//
+//                            catch (NumberFormatException e ){
+//
+//                                Toast.makeText(getApplicationContext(),"Invalid contact Number ",Toast.LENGTH_LONG).show();
+//
+//                            }
+//                        }else{
+//                            Toast.makeText(getApplicationContext(),"No source  to update ",Toast.LENGTH_LONG).show();
+//
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                    }
+//                });
+//
+//
+//
+//            }
+//        });
 
 
 
@@ -137,7 +135,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent bac = new Intent(getApplicationContext(),user_manager_view_acc.class);
+                Intent bac = new Intent(getApplicationContext(),DashBoard.class);
                 startActivity(bac);
             }
         });
