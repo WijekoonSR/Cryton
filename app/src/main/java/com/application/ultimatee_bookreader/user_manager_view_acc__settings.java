@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class user_manager_view_acc__settings extends AppCompatActivity {
 
-    Button save,back,edit;
+    Button save,back,edit,delete;
     EditText name,email,password;
     User user;
     String userName;
@@ -50,7 +50,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
         name = findViewById(R.id.text_edit_name);
         email = findViewById(R.id.text_edit_email);
         password = findViewById(R.id.txt_edit_pass);
-
+        delete = findViewById(R.id.btn_delete);
 
 
 
@@ -92,7 +92,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChildren()){
+                        if (!dataSnapshot.hasChild(userName)){
 
 
                             try {
@@ -101,7 +101,7 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                                 user.setEmail(email.getText().toString().trim());
                                 user.setPassword(password.getText().toString().trim());
 
-                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
                                 updateDB.setValue(user);
 
                                 Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
@@ -126,6 +126,32 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
+                delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (!dataSnapshot.hasChild(userName)){
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
+                            dbRef.removeValue();
+                            Toast.makeText(getApplicationContext(),"Deleted",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"No Source to delete",Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
