@@ -1,5 +1,6 @@
 package com.application.ultimatee_bookreader;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,62 +17,106 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.LineNumberReader;
+
 public class user_manager_view_acc__settings extends AppCompatActivity {
 
-    Button button,save;
-    EditText edit_name,edit_email,edit_number,edit_address;
+    Button save,back,edit;
+    EditText name,email,password;
+    User user;
+    String userName;
+
+
+
+
+        DatabaseReference Dbupdate;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_manager_view_acc__settings);
 
-        edit_name = findViewById(R.id.text_edit_name);
-        edit_email = findViewById(R.id.text_edit_email);
-        edit_number = findViewById(R.id.text_edit_number);
-        edit_address = findViewById(R.id.text_edit_address);
-        save = findViewById(R.id.btn_save);
+        Intent i = getIntent();
+        userName = i.getStringExtra("userName");
+        String msg = "Welcome "+userName;
+        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();;
 
-//button save
-        button = (Button) findViewById(R.id.btn_save);
-        button.setOnClickListener(new View.OnClickListener() {
+
+
+
+        save = findViewById(R.id.btn_save);
+        back = findViewById(R.id.btn_back);
+        edit = findViewById(R.id.btn_edit);
+        name = findViewById(R.id.text_edit_name);
+        email = findViewById(R.id.text_edit_email);
+        password = findViewById(R.id.txt_edit_pass);
+
+
+
+
+        DatabaseReference Dbupdate = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+        Dbupdate.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChildren()){
+                    name.setText(dataSnapshot.child("userName").getValue().toString());
+                    email.setText(dataSnapshot.child("email").getValue().toString());
+                    password.setText(dataSnapshot.child("password").getValue().toString());
+
+                }else{
+                    Toast.makeText(getApplicationContext(),"No Source",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent t = new Intent(user_manager_view_acc__settings.this, user_manager_view_acc__settings.class);
-                startActivity(t);
+
+
 
             }
         });
-
-        //button back
-
-
-        button = findViewById(R.id.btn_back);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent a = new Intent(user_manager_view_acc__settings.this, user_manager_view_acc.class);
-                startActivity(a);
-
-            }
-        });
-
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Sign up");
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChildren()) {
-                            edit_name.setText(dataSnapshot.child("username").getValue().toString());
-                            edit_email.setText(dataSnapshot.child("email").getValue().toString());
-                            edit_number.setText(dataSnapshot.child("password").getValue().toString());
-                            edit_address.setText(dataSnapshot.child("conPassword").getValue().toString());
-                        } else {
-                            Toast.makeText(getApplicationContext(), "No Source", Toast.LENGTH_LONG).show();
+                        if (dataSnapshot.hasChildren()){
+
+
+                            try {
+
+                                user.setUserName(name.getText().toString().trim());
+                                user.setEmail(email.getText().toString().trim());
+                                user.setPassword(password.getText().toString().trim());
+
+                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+                                updateDB.setValue(user);
+
+                                Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
+                            }
+
+                            catch (NumberFormatException e ){
+
+                                Toast.makeText(getApplicationContext(),"Invalid contact Number ",Toast.LENGTH_LONG).show();
+
+                            }
+                        }else{
+                            Toast.makeText(getApplicationContext(),"No source  to update ",Toast.LENGTH_LONG).show();
+
                         }
                     }
 
@@ -82,9 +127,26 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
                 });
 
 
+
             }
-
-
         });
+
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent bac = new Intent(getApplicationContext(),user_manager_view_acc.class);
+                startActivity(bac);
+            }
+        });
+
     }
+
+
 }
+
+
+
+

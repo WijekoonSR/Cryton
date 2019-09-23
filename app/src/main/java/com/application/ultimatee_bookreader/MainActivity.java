@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,11 +25,9 @@ public class MainActivity extends AppCompatActivity {
     Button loginbtn, signupbtn;
     EditText username, password;
 
-    DatabaseReference databaseReference, readRef, dbRef;
+    DatabaseReference databaseReference;
 
-    User user;
 
-    user_manager us;
 
 
     @Override
@@ -41,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
         //password = findViewById(R.id.txt_password);
         username = findViewById(R.id.txt_name);
 
-        username = (EditText) findViewById(R.id.txt_name);
-        password = (EditText) findViewById(R.id.txtpw);
+        username = findViewById(R.id.txt_name);
+        password = findViewById(R.id.txtpw);
         loginbtn = findViewById(R.id.btn_login);
+
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Sign up");
@@ -59,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 logIn(username.getText().toString(), pwd);
+
             }
+
         });
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,34 +73,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//        loginbtn.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            Intent i = new Intent(MainActivity.this, DashBoard.class);
-//            startActivity(i);
-//        }
-//    });
-//
-//        signupbtn.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            Intent i = new Intent(MainActivity.this,user_manager.class);
-//            startActivity(i);
-//        }
-//    });
-
-
-//        loginbtn.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View view) {
-//
-//                readRef = FirebaseDatabase.getInstance().getReference().child(String.valueOf(username));
-//
-
-
-//            }
-//        });
-
 
     private void logIn(final String userName, final String password) {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -106,14 +80,18 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child(userName).exists()) {
                     if (!userName.isEmpty()) {
-                        User user = dataSnapshot.child(userName).getValue(User.class);// assign retieved values from user to User class
+                        User user = dataSnapshot.child(userName).getValue(User.class);// assign retrived values from user to User class
 
-                        Toast.makeText(MainActivity.this, password + " " +user.getPassword() , Toast.LENGTH_LONG).show();
+
 
                         if (user.getPassword().equals(password)) {
-                            Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_LONG).show();
-                            Intent intphto = new Intent(getApplicationContext(), DashBoard.class);
-                            startActivity(intphto);
+                            Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            Intent home = new Intent(getApplicationContext(), DashBoard.class);
+                            home.putExtra("userName",userName);
+                            startActivity(home);
+
+
+
                         } else {
                             Toast.makeText(MainActivity.this, "Password Incorrect", Toast.LENGTH_LONG).show();
                         }
