@@ -90,13 +90,13 @@ public class books_manager_bookmarkAdd extends AppCompatActivity {
                 upref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild(book_Name + url)){
+                        if(dataSnapshot.hasChild(book_Name)){
                             Bookmarks bm = new Bookmarks();
                             bm.setBookName(book_Name);
                             bm.setNote(note1.getText().toString());
                             bm.setDownUrl(url);
 
-                            DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("Bookmarks").child(book_Name + url);
+                            DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("Bookmarks").child(book_Name);
                             dbref.setValue(bm);
                             Toast.makeText(books_manager_bookmarkAdd.this, "Successfully Updated", Toast.LENGTH_SHORT).show();
                         }
@@ -111,28 +111,28 @@ public class books_manager_bookmarkAdd extends AppCompatActivity {
             }
         });
 
-//        delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                DatabaseReference upref = FirebaseDatabase.getInstance().getReference().child("Bookmarks");
-//                upref.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        if(dataSnapshot.hasChild(book_Name + url)){
-//                            DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("Bookmarks").child(book_Name + url);
-//                            dbref.removeValue();
-//                            Toast.makeText(books_manager_bookmarkAdd.this, "Successfully Deleted", Toast.LENGTH_SHORT).show();
-//                            onBackPressed();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });            }
-//        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatabaseReference upref = FirebaseDatabase.getInstance().getReference().child("Bookmarks");
+                upref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild(book_Name)){
+                            DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("Bookmarks").child(book_Name);
+                            dbref.removeValue();
+                            Toast.makeText(books_manager_bookmarkAdd.this, "Successfully Deleted", Toast.LENGTH_SHORT).show();
+                            onBackPressed();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });            }
+        });
 
     }
 }
