@@ -8,13 +8,7 @@ class Books {
     String bookType;
 
 
-    public Books(String bookname, String author, String details, String downloadURL, String bookType) {
-        this.bookname = bookname;
-        this.author = author;
-        this.details = details;
-        this.downloadURL = downloadURL;
-        this.bookType = bookType;
-    }
+    public Books(){}
 
     public void setBookType(String bookType) {
         this.bookType = bookType;

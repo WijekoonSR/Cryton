@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/list_root"
     >
 
     <ImageView
         android:id="@+id/imgPDF"
-        android:layout_width="77dp"
-        android:layout_height="99dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/pdf_2_64px" />
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/health_book_64px" />
 
     <TextView
         android:id="@+id/bookName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/imgPDF"
         android:text="book name"
@@ -33,8 +33,9 @@
         android:layout_alignTop="@+id/bookName"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="41dp"
+
         android:layout_toRightOf="@+id/imgPDF"
-        android:text="Author"/>
+        android:text="Author"></TextView>
 
     <TextView
         android:id="@+id/details"
@@ -53,9 +54,9 @@
         android:id="@+id/bookType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="25dp"
-        android:layout_toRightOf="@+id/bookName"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/bookName"
         android:background="#4AE24A"
         android:text="Book Type" />
 
@@ -63,21 +64,11 @@
         android:id="@+id/btnDownload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnAddBookmark"
-        android:layout_marginLeft="153dp"
-        android:layout_marginTop="59dp"
+        android:layout_alignTop="@+id/bookType"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="60dp"
         android:layout_toRightOf="@id/Author"
         android:background="#07EFF5"
         android:minHeight="30dp"
         android:text="Download" />
-
-    <Button
-        android:id="@+id/btnAddBookmark"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/bookType"
-        android:text="Add Bookmark"
-        android:textSize="8sp" />
 </RelativeLayout>

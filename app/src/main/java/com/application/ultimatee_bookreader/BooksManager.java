@@ -20,10 +20,21 @@ public class BooksManager extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BooksManager.this, DashBoard.class ));
+                startActivity(new Intent(BooksManager.this, books_manager_listView.class ));
+            }
+        });
+
+        button = findViewById(R.id.imgbtnFantasy);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BooksManager.this,books_manager_search.class));
             }
         });
     }
+
+
+
 
     private void getIntent(View v){
         switch(v.getId()){

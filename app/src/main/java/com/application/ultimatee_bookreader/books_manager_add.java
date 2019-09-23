@@ -106,14 +106,14 @@ public class books_manager_add extends AppCompatActivity {
         progressDialog.show();
 
         final String name = bookName.getText().toString()+".pdf";
-        final Uri file = pdfUri;
+        final Uri file = pdfUri; // assign file uri
         StorageReference riversRef = mStorageRef.child(name);
 
-        riversRef.putFile(file)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        riversRef.putFile(file) // insert pdf to storage
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() { // after successfully inserted file insert details to realtime db
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        book = new Books("","","","","");
+                        book = new Books();
                         book.setBookname(bookName.getText().toString());
                         book.setAuthor(author.getText().toString());
                         book.setDetails(bookDetails.getText().toString());
@@ -182,8 +182,8 @@ public class books_manager_add extends AppCompatActivity {
     }
 
     public void clearFields(){
-        author.getText().clear();
-        bookName.getText().clear();
+        author.setText(" ");
+        bookName.setText(" ");
         UploadedFname.setText(getResources().getText(R.string.fileSelected));
 
     }

@@ -38,6 +38,15 @@ public class DashBoard extends AppCompatActivity {
             }
         });
 
+        button = findViewById(R.id.imgbtnBookmarks);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DashBoard.this, books_manager_bookmark_listview.class);
+                startActivity(i);
+            }
+        });
+
         button = findViewById(R.id.imgbtnAddBooks);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

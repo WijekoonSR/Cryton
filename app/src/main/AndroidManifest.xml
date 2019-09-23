@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.application.ultimatee_bookreader">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".books_manager_add"></activity>
+        <activity android:name=".books_manager_bookmark_listview"></activity>
+        <activity android:name=".books_manager_bookmarkAdd" />
+        <activity android:name=".books_manager_search" />
+        <activity android:name=".books_manager_add" />
         <activity android:name=".user_manager_view_privacy" />
         <activity android:name=".request_book_view" />
         <activity android:name=".user_manager_view_acc" />
@@ -19,6 +21,7 @@
         <activity android:name=".user_manager" />
         <activity android:name=".DashBoard" />
         <activity android:name=".BooksManager" />
+        <activity android:name=".books_manager_listView" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +29,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

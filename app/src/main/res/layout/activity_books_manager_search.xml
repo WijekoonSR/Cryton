@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".books_manager_search">
 
->
     <TextView
         android:id="@+id/lbl_heading"
         android:layout_width="wrap_content"
@@ -46,12 +45,15 @@
         android:layout_marginTop="65dp"
         android:layout_marginRight="20dp"
         android:foreground="@drawable/btn_search"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/result_list"
+        android:layout_width="match_parent"
+        android:layout_height="514dp"
+        android:layout_alignTop="@+id/search_field_txt"
+        android:layout_marginTop="78dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </ListView>
-</LinearLayout>
