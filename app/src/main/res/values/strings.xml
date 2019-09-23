@@ -174,4 +174,6 @@
     <string name="request_a_book">Request Book</string>
     <string name="book_type">Book Type</string>
     <string name="book_name">Book Name</string>
+
+    <string-array name="feedbackTypeList"></string-array>
 </resources>

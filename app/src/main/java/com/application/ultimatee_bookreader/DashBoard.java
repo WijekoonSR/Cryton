@@ -106,6 +106,14 @@ public class DashBoard extends AppCompatActivity {
 //        });
 
 
+            button = findViewById(R.id.imgbtnLogOut);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(i);
+                }
+            });
 
 
     }

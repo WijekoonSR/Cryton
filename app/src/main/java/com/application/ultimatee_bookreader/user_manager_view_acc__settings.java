@@ -108,7 +108,7 @@ User us;
                           us.setEmail(em);
                             us.setPassword(pw);
 
-                            
+
 
                             DatabaseReference dbref = FirebaseDatabase.getInstance().getReference("Sign up").child(un);
                             dbref.setValue(us);

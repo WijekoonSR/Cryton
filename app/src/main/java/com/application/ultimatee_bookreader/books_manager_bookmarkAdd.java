@@ -1,14 +1,14 @@
 package com.application.ultimatee_bookreader;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -90,7 +90,7 @@ public class books_manager_bookmarkAdd extends AppCompatActivity {
                 upref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild(book_Name)){
+                        if(!dataSnapshot.hasChild(book_Name)){
                             Bookmarks bm = new Bookmarks();
                             bm.setBookName(book_Name);
                             bm.setNote(note1.getText().toString());
@@ -119,11 +119,15 @@ public class books_manager_bookmarkAdd extends AppCompatActivity {
                 upref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild(book_Name)){
+                        if(!dataSnapshot.hasChild(book_Name)){
                             DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("Bookmarks").child(book_Name);
                             dbref.removeValue();
                             Toast.makeText(books_manager_bookmarkAdd.this, "Successfully Deleted", Toast.LENGTH_SHORT).show();
                             onBackPressed();
+                        }
+                        else{
+                            Toast.makeText(books_manager_bookmarkAdd.this, "Can not Deleted", Toast.LENGTH_SHORT).show();
+
                         }
                     }
 
