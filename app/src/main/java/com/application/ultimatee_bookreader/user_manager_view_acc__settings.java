@@ -84,50 +84,50 @@ public class user_manager_view_acc__settings extends AppCompatActivity {
             }
         });
 
-//        save.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
-//                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        if (dataSnapshot.hasChildren()){
-//
-//
-//                            try {
-//
-//                                user.setUserName(name.getText().toString().trim());
-//                                user.setEmail(email.getText().toString().trim());
-//                                user.setPassword(password.getText().toString().trim());
-//
-//                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
-//                                updateDB.setValue(user);
-//
-//                                Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
-//                            }
-//
-//                            catch (NumberFormatException e ){
-//
-//                                Toast.makeText(getApplicationContext(),"Invalid contact Number ",Toast.LENGTH_LONG).show();
-//
-//                            }
-//                        }else{
-//                            Toast.makeText(getApplicationContext(),"No source  to update ",Toast.LENGTH_LONG).show();
-//
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });
-//
-//
-//
-//            }
-//        });
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference("Sign up").child(userName);
+                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.hasChildren()){
+
+
+                            try {
+
+                                user.setUserName(name.getText().toString().trim());
+                                user.setEmail(email.getText().toString().trim());
+                                user.setPassword(password.getText().toString().trim());
+
+                                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference("Sign up").child("q");
+                                updateDB.setValue(user);
+
+                                Toast.makeText(getApplicationContext(), "Data  updated successfully ", Toast.LENGTH_LONG).show();
+                            }
+
+                            catch (NumberFormatException e ){
+
+                                Toast.makeText(getApplicationContext(),"Invalid contact Number ",Toast.LENGTH_LONG).show();
+
+                            }
+                        }else{
+                            Toast.makeText(getApplicationContext(),"No source  to update ",Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+
+            }
+        });
 
 
 

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DashBoard extends AppCompatActivity {
 
-    ImageButton button;
+    ImageButton button,view_acc;
     String userName;
 
     @Override
@@ -24,13 +24,13 @@ public class DashBoard extends AppCompatActivity {
         String msg = "Welcome "+userName;
         Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
 
-
-        button = findViewById(R.id.imgbtnUser);
-        button.setOnClickListener(new View.OnClickListener() {
+       view_acc =findViewById(R.id.imgbtnUser);
+        view_acc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent t = new Intent(getApplicationContext(),user_manager_view_acc__settings.class);
-                startActivity(t);
+                Intent sett = new Intent(getApplicationContext(),user_manager_view_acc__settings.class);
+                sett.putExtra("userName",userName);
+                startActivity(sett);
             }
         });
 
@@ -74,15 +74,6 @@ public class DashBoard extends AppCompatActivity {
         });
 
 
-        button = findViewById(R.id.imgbtnUser);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this, user_manager_view_acc.class);
-                startActivity(i);
-                //hhh
-            }
-        });
 
         button = findViewById(R.id.imgbtnRequestBooks);
         button.setOnClickListener(new View.OnClickListener() {
@@ -116,15 +107,6 @@ public class DashBoard extends AppCompatActivity {
 
 
 
-        button = findViewById(R.id.imgbtnLogOut);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(DashBoard.this,user_manager_view_acc__settings.class);
-                startActivity(i);
-                //hhh
-            }
-        });
 
     }
 }
