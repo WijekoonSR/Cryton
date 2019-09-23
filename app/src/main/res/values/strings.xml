@@ -135,11 +135,6 @@
     <string name="name">name</string>
     <string name="your_app_is_awesome">Your app is awesome</string>
 
-    <string name="promptBook">Select Book Type</string>
-
-    <string name="fileSelected">please attach file !</string>
-
-    <!-- Books manager strings   -->
     <string-array name="privacy">
 
         <item>only me</item>
@@ -148,6 +143,7 @@
 
 
     </string-array>
+
     <string-array name="privacy_option">
 
         <item>Yes</item>
@@ -155,6 +151,8 @@
 
 
     </string-array>
+
+    <!-- Books manager strings   -->
     <string-array name="bookTypes">
         <item>biography</item>
         <item>fanatasy</item>
@@ -165,12 +163,9 @@
         <item>textile</item>
         <item>western</item>
     </string-array>
+    <string name="promptBook">Select Book Type</string>
+    <string name = "fileSelected">please attach file !</string>
 
-    <!--    Request Book Manager-->
-    <string name="author">Author</string>
-    <string name="book_type">Book Type</string>
-    <string name="book_name">Book Name</string>
-    <string name="request_a_book">Request a Book</string>
-    <string name="cancel1">CANCEL</string>
-    <string name="submit1">SUBMIT</string>
+
+
 </resources>
