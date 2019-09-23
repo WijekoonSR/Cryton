@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
 
 >
+
     <TextView
         android:id="@+id/lbl_heading"
         android:layout_width="wrap_content"
@@ -15,7 +16,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_extralight"
         android:text="Search Book"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textColor="#000FFF"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/search_field_txt"

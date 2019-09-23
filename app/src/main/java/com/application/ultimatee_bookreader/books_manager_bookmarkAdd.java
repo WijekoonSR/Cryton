@@ -31,7 +31,7 @@ public class books_manager_bookmarkAdd extends AppCompatActivity {
 
         bookName = (EditText) findViewById(R.id.txtbookName);
         note1= (EditText) findViewById(R.id.txtNote);
-        submit = (Button) findViewById(R.id.btnSubmit);
+        submit = (Button) findViewById(R.id.btnSubmit1);
         edit = (Button) findViewById(R.id.btnUpdate);
         delete = (Button) findViewById(R.id.btnDelete);
 
