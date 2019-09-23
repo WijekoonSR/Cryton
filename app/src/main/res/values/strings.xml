@@ -167,5 +167,11 @@
     <string name = "fileSelected">please attach file !</string>
 
 
-
+    <string name="RequestBook">Request a Book</string>
+    <string name="cancel1">Cancel</string>
+    <string name="submit1">Submit</string>
+    <string name="author">Author</string>
+    <string name="request_a_book">Request Book</string>
+    <string name="book_type">Book Type</string>
+    <string name="book_name">Book Name</string>
 </resources>
